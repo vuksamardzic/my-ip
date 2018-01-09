@@ -7,6 +7,9 @@ httpReq.onreadystatechange = function(ev)
         {
             var data = JSON.parse(httpReq.responseText);
             var el = document.querySelector('.ip');
+            var title = document.querySelector('title');
+
+            title.innerHTML += ' ' + data.ip;
             el.innerText = data.ip;
             el.classList.add('visible');
         }
